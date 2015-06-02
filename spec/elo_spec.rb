@@ -29,8 +29,9 @@ describe "Elo" do
 
     game8 = bob.versus(jane, :result => 0)
 
-    expect(bob.rating).to eq(1080)
-    expect(jane.rating).to eq(1412)
+    expect(bob.rating + jane.rating).to eq(2500)
+    expect(bob.rating).to eq(1083)
+    expect(jane.rating).to eq(1417)
     expect(bob).not_to be_pro
     expect(bob).to be_starter
     expect(bob.games_played).to eq(8)
@@ -132,17 +133,17 @@ describe "Elo" do
 
     it "winning" do
       @a.wins_from(@b)
-      expect(@a.rating).to eq(2003)
+      expect(@a.rating).to eq(2004)
     end
 
     it "losing" do
       @a.loses_from(@b)
-      expect(@a.rating).to eq(1993)
+      expect(@a.rating).to eq(1994)
     end
 
     it "draw" do
       @a.plays_draw(@b)
-      expect(@a.rating).to eq(1998)
+      expect(@a.rating).to eq(1999)
     end
 
   end
