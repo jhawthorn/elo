@@ -12,10 +12,10 @@ module Elo
 
     # The first Elo::Player. The result is in perspecive of
     # this player.
-    attr_reader :one
+    attr_accessor :one
 
     # The second Elo::Player.
-    attr_reader :two
+    attr_accessor :two
 
     # Every time a result is set, it tells the Elo::Player
     # objects to update their scores.
@@ -26,7 +26,7 @@ module Elo
     alias_method :result=, :process_result
 
     def calculate
-      if result
+      if result && one && two
         one.send(:played, self)
         two.send(:played, self)
         save

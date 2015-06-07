@@ -2,6 +2,7 @@ module Elo
   # A player. You need at least two play a Game.
   class Player
     include Helper
+    attr_writer :rating, :games_played, :games, :pro, :k_factor
 
     # The rating you provided, or the default rating from configuration
     def rating

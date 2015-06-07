@@ -6,14 +6,18 @@ module Elo
   class Rating
     include Helper
 
+    # The result of the match. 1 means that the player won, 0 means that the
+    # player lost and 0.5 means that it was a draw.
+    attr_writer :result
+
     # The rating of the player you DON"T wish to calculate.
-    attr_reader :other_rating
+    attr_accessor :other_rating
 
     # The rating of the player you wish to calculate.
-    attr_reader :old_rating
+    attr_accessor :old_rating
 
     # The k-factor you wish to use for this calculation.
-    attr_reader :k_factor
+    attr_accessor :k_factor
 
     # The new rating is... wait for it... the new rating!
     def new_rating
@@ -22,8 +26,6 @@ module Elo
 
     private
 
-    # The result of the match. 1 means that the player won, 0 means that the
-    # player lost and 0.5 means that it was a draw.
     def result
       fail "Invalid result: #{@result.inspect}" unless valid_result?
       @result.to_f

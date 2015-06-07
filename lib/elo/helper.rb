@@ -4,7 +4,7 @@ module Elo
     # almost, but not quite, entirely unlike ActiveRecord.
     def initialize(attributes = {})
       attributes.each do |key, value|
-        instance_variable_set("@#{key}", value)
+        public_send("#{key}=", value)
       end
     end
   end
