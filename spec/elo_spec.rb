@@ -34,9 +34,6 @@ describe 'Elo' do
     expect(bob).to be_starter
     expect(bob.games_played).to eq(8)
     expect(bob.games).to eq([game1, game2, game3, game4, game5, game6, game7, game8])
-
-    expect(Elo::Player.all).to eq([bob, jane])
-    expect(Elo::Game.all).to eq([game1, game2, game3, game4, game5, game6, game7, game8])
   end
 
   describe 'Configuration' do
