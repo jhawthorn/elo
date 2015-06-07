@@ -6,7 +6,7 @@ module Elo
 
     # The rating you provided, or the default rating from configuration
     def rating
-      @rating ||= Elo.config.default_rating
+      @rating ||= config.default_rating
     end
 
     # The number of games played is needed for calculating the K-factor.
@@ -22,14 +22,14 @@ module Elo
     # Is the player considered a pro, because his/her rating crossed
     # the threshold configured? This is needed for calculating the K-factor.
     def pro_rating?
-      rating >= Elo.config.pro_rating_boundry
+      rating >= config.pro_rating_boundry
     end
 
     # Is the player just starting? Provide the boundry for
     # the amount of games played in the configuration.
     # This is needed for calculating the K-factor.
     def starter?
-      games_played < Elo.config.starter_boundry
+      games_played < config.starter_boundry
     end
 
     # FIDE regulations specify that once you reach a pro status
@@ -53,10 +53,10 @@ module Elo
     #	This stops this player from using the K-factor rules.
     def k_factor
       return @k_factor if @k_factor
-      Elo.config.applied_k_factors.each do |rule|
+      config.applied_k_factors.each do |rule|
         return rule[:factor] if instance_eval(&rule[:rule])
       end
-      Elo.config.default_k_factor
+      config.default_k_factor
     end
 
     # Start a game with another player. At this point, no
@@ -95,6 +95,10 @@ module Elo
       games << game
       @rating = game.ratings[self].new_rating
       @pro    = true if pro_rating?
+    end
+
+    def config
+      Elo.config
     end
   end
 end
