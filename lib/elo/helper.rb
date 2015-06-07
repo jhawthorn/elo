@@ -1,13 +1,11 @@
 module Elo
-
-	module Helper
-
+  module Helper
     def self.included(base)
       base.extend ClassMethods
     end
 
     # Every object can be initialized with a hash,
-		# almost, but not quite, entirely unlike ActiveRecord.
+    # almost, but not quite, entirely unlike ActiveRecord.
     def initialize(attributes = {})
       attributes.each do |key, value|
         instance_variable_set("@#{key}", value)
@@ -16,14 +14,10 @@ module Elo
     end
 
     module ClassMethods
-
       # Provides a list of all instantiated objects of the class.
       def all
         @all ||= []
       end
-
     end
-
-	end
-
+  end
 end

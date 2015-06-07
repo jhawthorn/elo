@@ -7,7 +7,6 @@ require 'elo/version'
 
 # See README.rdoc for general information about Elo.
 module Elo
-
   # Accessor to the configuration object, which,
   # should be instantiated only once (and automatically).
   def self.config
@@ -20,8 +19,7 @@ module Elo
   #   Elo.configure do |config|
   #     config.attribute = :value
   #   end
-  def self.configure(&block)
+  def self.configure(&_block)
     yield(config)
   end
-
 end
