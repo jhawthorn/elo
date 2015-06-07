@@ -39,7 +39,7 @@ module Elo
     #
     #		Elo::Player.new(:pro => true)
     def pro?
-      !!@pro
+      @pro
     end
 
     # You can override this method if you store each game

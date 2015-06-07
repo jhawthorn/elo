@@ -69,11 +69,10 @@ module Elo
     end
 
     def apply_fide_k_factors
-      unless @applied_fide_k_factors
-        k_factor(10) { pro? || pro_rating? }
-        k_factor(25) { starter? }
-        @applied_fide_k_factors = true
-      end
+      return if @applied_fide_k_factors
+      k_factor(10) { pro? || pro_rating? }
+      k_factor(25) { starter? }
+      @applied_fide_k_factors = true
     end
   end
 end
