@@ -66,10 +66,6 @@ module Elo
       @ratings ||= { one => rating_one, two => rating_two }
     end
 
-    def inspect
-      'game'
-    end
-
     private
 
     # Create an Elo::Rating object for player one

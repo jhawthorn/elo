@@ -83,10 +83,6 @@ module Elo
       versus(other_player, options).lose
     end
 
-    def inspect
-      'player'
-    end
-
     private
 
     # A Game tells the players informed to update their
