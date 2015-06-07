@@ -3,6 +3,7 @@ require 'elo/configuration'
 require 'elo/game'
 require 'elo/player'
 require 'elo/rating'
+require 'elo/version'
 
 # See README.rdoc for general information about Elo.
 module Elo

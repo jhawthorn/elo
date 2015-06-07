@@ -26,7 +26,4 @@ PLATFORMS
 
 DEPENDENCIES
   elo!
-  rspec (>= 1.2.9)
-
-BUNDLED WITH
-   1.10.2
+  rspec (~> 3.0)
