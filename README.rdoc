@@ -1,4 +1,6 @@
-= Elo
+= elo2
+
+An updated version of {Iain Hecker's ELO gem}[http://github.com/iain/elo]
 
 From {Wikipedia}[http://en.wikipedia.org/wiki/Elo_rating_system]:
 
@@ -11,11 +13,6 @@ also used in many other games. It is also used as a rating system for multiplaye
 competition in a number of computer games, and has been adapted to team sports
 including association football, American college football and basketball, and
 Major League Baseball.
-
-== Links
-
-* {API documentation}[http://iain.github.com/elo/doc]
-* {Source Code}[http://github.com/iain/elo]
 
 == Usage
 
@@ -110,10 +107,12 @@ games, and 16 for everybody else.
 
 == Installation
 
-  gem install elo
+Add the following to your Gemfile
+
+  gem "elo2"
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
@@ -125,3 +124,4 @@ games, and 16 for everybody else.
 == Copyright
 
 Copyright (c) 2010 Iain Hecker. Released under the MIT License
+Copyright (c) 2015 John Hawthorn. Released under the MIT License

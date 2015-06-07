@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    elo (0.1.0)
+    elo2 (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -25,5 +25,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  elo!
+  elo2!
   rspec (~> 3.0)
