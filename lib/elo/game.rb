@@ -29,7 +29,6 @@ module Elo
       if result && one && two
         one.send(:played, self)
         two.send(:played, self)
-        save
       end
       self
     end
@@ -50,12 +49,6 @@ module Elo
     # This is a shortcut method for setting the score to 0.5
     def draw
       process_result 0.5
-    end
-
-    # You can override this method if you store each game
-    # in a database or something like that.
-    # This method will be called when a result is known.
-    def save
     end
 
     # Set the winner. Provide it with a Elo::Player.

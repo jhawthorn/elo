@@ -43,12 +43,6 @@ module Elo
       @pro
     end
 
-    # You can override this method if you store each game
-    # in a database or something like that.
-    # This method will be called when a result is known.
-    def save
-    end
-
     # Calculates the K-factor for the player.
     # Elo allows you specify custom Rules (see Elo::Configuration).
     #
@@ -105,7 +99,6 @@ module Elo
       games << game
       @rating = game.ratings[self].new_rating
       @pro    = true if pro_rating?
-      save
     end
   end
 end
