@@ -50,12 +50,6 @@ You can get all kinds of info from a player:
   bob.games_played # => 8
   bob.games        # => [ game1, game2, ... game8 ]
 
-Or get a list of players:
-
-  Elo::Player.all  # => [ bob, jane ]
-  Elo::Game.all    # => [ game1, game2, ... game8 ]
-
-
 == Configuration
 
 You can configure Elo in many ways. In it's default configuration, it is configured
